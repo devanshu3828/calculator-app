@@ -1,0 +1,33 @@
+.header {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+}
+.header p {
+  font-size: 1rem;
+  line-height: 1.875rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header_expression {
+  width: 100%;
+  min-height: 30px;
+}
+
+.header_expression p {
+  white-space: nowrap;
+  min-width: 100%;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.header_result {
+  font-weight: bold;
+  font-size: 1.3rem !important;
+  min-height: 30px;
+}
+
+.hamburger-button {
+  font-size: 1.6rem;
+}
