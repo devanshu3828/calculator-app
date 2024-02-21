@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { evaluate } from "mathjs";
 import Header from "./components/Header";
 import KeyPad from "./components/KeyPad";
 import History from "./components/History";
@@ -71,9 +72,13 @@ function App() {
     }
     const lastChar = exp.slice(-1);
     if (!numbers.includes(lastChar)) exp = exp.slice(0, -1);
-    // eslint-disable-next-line no-eval
-    const answer = eval(exp).toFixed(2) + "";
-    setResult(answer);
+    try {
+      const answer = evaluate(exp).toFixed(2) + "";
+      setResult(answer);
+    } catch (error) {
+      console.error("Error:", error);
+      setResult("Invalid expression");
+    }
   };
 
   const clearHistory = () => {
